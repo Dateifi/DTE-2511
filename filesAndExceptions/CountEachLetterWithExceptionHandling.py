@@ -7,10 +7,12 @@ def main():
         except IOError:
             print("File " + filename + " does not exist. Try again")
 
+    count = {}
     counts = 26 * [0] # Create and initialize counts
     for line in inputFile:
         # Invoke the countLetters function to count each letter
         countLetters(line.lower(), counts)
+        #countLetters(line.lower(), count)
     
     # Display results
     for i in range(len(counts)):
@@ -25,6 +27,7 @@ def countLetters(line, counts):
     for ch in line:
         if ch.isalpha():
             counts[ord(ch) - ord('a')] += 1
+            #counts.get(ch, 0) + 1
 
 main()
 
