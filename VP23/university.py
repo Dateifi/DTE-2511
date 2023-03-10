@@ -35,6 +35,11 @@ class Person:
     def age(self, value):
         if value >= 0 and value <= 120:
             self.__age = value
+        else:
+            raise BusinessLogicError("Invalid age value")
+        
+    def __str__(self):
+        return(f"{self.name}, {self.__age}")
 
 
 class Student(Person):
